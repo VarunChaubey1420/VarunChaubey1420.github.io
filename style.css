@@ -1,47 +1,434 @@
-body {
+/* ----------------------------------------------------------
+   GLOBAL STYLES
+---------------------------------------------------------- */
+* {
     margin: 0;
-    font-family: comic sans ms, sans-serif;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
 }
-nav {
+
+/* Full page gradient background */
+body {
+    background: linear-gradient(to bottom, #3b62ff 10%, #ffffff 60%);
+    color: #222;
+    min-height: 100vh;
+}
+
+/* Standard container width */
+.nav-container,
+.footer-container {
+    width: 90%;
+    max-width: 1300px;
+    margin: auto;
+}
+
+/* ----------------------------------------------------------
+   NAVBAR
+---------------------------------------------------------- */
+.navbar {
+    background: white;
+    padding: 15px 0;
+    position: sticky;
+    top: 0;
+    z-index: 20;
+}
+
+.logo {
+    height: 42px;
+}
+
+/* Navbar layout */
+.nav-container {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #333;
-    padding: 1rem;
 }
-.logo {
-    color: white;
-    font-size: 1.5rem;
+
+/* Nav Links */
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 25px;
 }
-.menu {
+
+/* Hide the radio bubble */
+.dropdown input {
     display: none;
-    flex-direction: column;
-    background-color: #444;
-    position: absolute;
-    top: 60px;
-    right: 20px;
-    width: 200px;
 }
-.menu a {
-    color: white;
-    padding: 1em;
-    text-decoration: none;
+
+/* The clickable menu text */
+.dropdown label {
+    cursor: pointer;
+    font-size: 15px;
+    font-weight: 500;
+    color: #333;
+    padding: 5px 2px;
+}
+
+.dropdown label:hover {
+    color: #7b35d8;
+}
+
+/* Dropdown Menu Styling */
+.dropdown {
+    position: relative;
+}
+
+.dropdown-menu {
+    position: absolute;
+    top: 30px;
+    left: 0;
+    width: 240px;
+    background: #fff;
+    border-radius: 14px;
+    padding: 15px 10px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.12);
+    display: none;
+}
+
+/* Only one opens because all share name="nav-toggle" */
+.dropdown input:checked + label + .dropdown-menu {
     display: block;
 }
-.hamburger {
-    font-size: 1.5rem;
-    color: white;
+
+/* Dropdown links */
+.dropdown-menu a {
+    display: block;
+    padding: 10px;
+    border-radius: 8px;
+    text-decoration: none;
+    color: #222;
+    font-size: 14px;
+}
+
+.dropdown-menu a:hover {
+    background: #f2ecff;
+}
+
+/* ----------------------------------------------------------
+   AUTH BUTTONS (Right Side)
+---------------------------------------------------------- */
+.btn-secondary,
+.btn-primary {
+    padding: 8px 18px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 15px;
+    text-decoration: none;
+}
+
+.btn-secondary {
+    background: #fff;
+    color: #1d1d1d;
+    border: 1px solid #ccc;
+}
+
+.btn-primary {
+    background: #7b35d8;
+    color: #fff;
+}
+
+.btn-primary:hover {
+    background: #6b2ac0;
+}
+
+/* ----------------------------------------------------------
+   HERO SECTION
+---------------------------------------------------------- */
+.hero {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 90px 5% 60px;
+}
+
+.hero-left {
+    width: 45%;
+}
+
+.hero-left h1 {
+    font-size: 50px;
+    font-weight: 600;
+    color: #ffffff;
+    margin-bottom: 20px;
+}
+
+.hero-left p {
+    font-size: 16px;
+    margin-bottom: 30px;
+    color: #ffffff;
+}
+
+.hero-left a {
+    padding: 12px 15px;
+    font-size: 14px;
+    text-decoration: none;
+    color: #1d1d1d;
+    background-color: #fffefe;
+    border-radius: 10px;
+    font-weight: 500;
+}
+
+.large {
+    padding: 14px 30px;
+    font-size: 18px;
+}
+
+.hero-right {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+}
+
+.hero-video {
+    width: 100%;
+    max-width: 550px;
+    border-radius: 18px;
+    box-shadow: 0 15px 30px rgba(0,0,0,0.18);
+    object-fit: cover;
+    background: #000;
+}
+
+
+/* ----------------------------------------------------------
+   EXPLORE SECTION
+---------------------------------------------------------- */
+.explore {
+    padding: 60px 5% 80px;
+    text-align: center;
+}
+
+.explore h2 {
+    font-size: 38px;
+    font-weight: 700;
+    margin-bottom: 25px;
+    color: #1d1d1d;
+}
+
+/* Category bar */
+.category-bar {
+    display: flex;
+    justify-content: center;
+    gap: 18px;
+    background: #fff;
+    padding: 12px 20px;
+    border-radius: 40px;
+    width: fit-content;
+    margin: 20px auto 45px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+}
+
+.category-bar button {
+    border: none;
+    background: transparent;
+    padding: 10px 18px;
+    border-radius: 25px;
+    font-size: 15px;
+    cursor: pointer;
+    color: #333;
+    font-weight: 500;
+}
+
+.category-bar .active {
+    background: #3e5fff;
+    color: #fff;
+}
+
+/* Explore grid */
+.explore-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 25px;
+}
+
+/* Explore Cards */
+.explore-card {
+    padding: 28px;
+    border-radius: 20px;
+    height: 240px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    color: #fff;
+}
+
+.pink {
+    background: #ff7086;
+}
+
+.yellow {
+    background: #fde280;
+    color: #333 !important;
+}
+
+.btn-white {
+    background: #fff;
+    color: #333;
+    padding: 10px 18px;
+    border-radius: 20px;
+    border: none;
     cursor: pointer;
 }
-@media (min-width: 768px) {
-    .menu {
-        display: flex;
-        position: static;
-        flex-direction: row;
-        background: none;
-        width: auto;
+
+/* ----------------------------------------------------------
+   FOOTER
+---------------------------------------------------------- */
+.footer {
+    padding: 50px 5% 30px;
+    background: #ffffffcc;
+    backdrop-filter: blur(4px);
+}
+
+#text {
+    font-size: 14px;
+    margin-bottom: 2px;
+    color: #000000;
+    text-align: center;
+    font-weight: 100;
+}
+#text a {
+    color: #7300ff;
+}
+
+#plan{
+    margin-bottom: 6px;
+    color: #000000;
+    font-size: 14px;
+    border-radius: 5px;
+    padding: 5px 10px;
+    border: 1px solid #cbcbcb;
+    text-decoration: none;
+    margin-left:472px;
+}
+
+#plan:hover {
+    background: rgb(240, 240, 240);
+    border-radius: 5px;
+    padding: 5px 10px;
+}
+
+.footer-container img {
+    height: 40px;
+    margin-bottom: 20px;
+}
+
+.footer-columns {
+    display: flex;
+    gap: 60px;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+.footer-columns div p {
+    font-size: 17px;
+    margin-bottom: 10px;
+    color: #717070;
+    padding: 5px 10px;
+}
+
+.footer-columns div a {
+    display: block;
+    margin-bottom: 6px;
+    color: #000000;
+    font-size: 14px;
+    border-radius: 5px;
+    padding: 5px 10px;
+    text-decoration: none;
+}
+
+.footer-columns a:hover {
+    background: rgb(240, 240, 240);
+    border-radius: 5px;
+    padding: 5px 10px;
+}
+
+#download p {
+    font-size: 14px;
+    margin-bottom: 10px;
+    color: #000000;
+    padding: 1px;
+}
+
+#download a {
+    margin-bottom: 6px;
+    display: inline;
+    color: #000000;
+    font-size: 14px;
+    border: 1px solid #b9b9b9;
+    border-radius: 5px;
+    padding: 5px 10px;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+#download a:hover {
+    background: rgb(240, 240, 240);
+    border-radius: 5px;
+    padding: 5px 10px;
+}
+
+.footer-bottom {
+    margin-top: 25px;
+    display: flex;
+    gap: 3c0px;
+    justify-content: space-between;
+
+}
+.footer-bottom p {
+    color: #555;
+    font-size: 14px;
+}
+.footer-bottom a {
+    text-decoration: none;
+    color: #1d1d1d;
+}
+.terms {
+    display: flex;
+    gap: 15px;
+}
+.social-links a{
+    display: inline;
+    gap: 20px;
+    border-radius: 5px;
+    padding: 2px 5px;
+}
+.terms a{
+    display: inline;
+    gap: 20px;
+    border-radius: 5px;
+    padding: 2px 5px;
+}
+.terms a:hover {
+    background: rgb(240, 240, 240);
+    border-radius: 5px;
+    padding: 2px 5px;
+}
+.social-links a:hover {
+    background: rgb(240, 240, 240);
+    border-radius: 5px;
+    padding: 2px 5px;
+}
+
+
+/* ----------------------------------------------------------
+   RESPONSIVE DESIGN
+---------------------------------------------------------- */
+@media (max-width: 900px) {
+    .nav-links {
+        display: none; /* Simplified mobile navbar */
     }
-    .hamburger {
-        display: none;
+
+    .hero {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .hero-left, .hero-right {
+        width: 100%;
+    }
+
+    .hero-left h1 {
+        font-size: 40px;
     }
 }

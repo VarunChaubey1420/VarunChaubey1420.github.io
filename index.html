@@ -3,20 +3,248 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+    <title>Canva – Visual Suite for Everyone</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
+
 <body>
-    <nav>
-        <div class="logo">MySite</div>
-        <div class="hamburger">☰</div>
-        <div class="menu">
-            <a href="#">Home</a>
-            <a href="#">About</a>
-            <a href="#">Services</a>
-            <a href="#">Contact</a>
+
+    <!-- ========================= NAVBAR ========================= -->
+    <header class="navbar">
+        <div class="nav-container">
+
+            <!-- LOGO -->
+            <img src="https://static.canva.com/web/images/8439b51bb7a19f6e65ce1064bc37c197.svg" class="logo">
+
+            <!-- NAVIGATION -->
+            <nav>
+                <ul class="nav-links">
+
+                    <!-- DESIGN -->
+                    <li class="dropdown">
+                        <input type="radio" name="nav-toggle" id="design-toggle">
+                        <label for="design-toggle">Design</label>
+                        <div class="dropdown-menu">
+                            <a href="https://www.canva.com/docs/">Digital design</a>
+                            <a href="https://www.canva.com/print/">Print design</a>
+                            <a href="https://www.canva.com/photo-editor/">Images & Photos</a>
+                            <a href="https://www.canva.com/video-editor/">Video & Audio</a>
+                            <a href="https://www.canva.in/templates/">Template Library</a>
+                        </div>
+                    </li>
+
+                    <!-- PRODUCT -->
+                    <li class="dropdown">
+                        <input type="radio" name="nav-toggle" id="product-toggle">
+                        <label for="product-toggle">Product</label>
+                        <div class="dropdown-menu">
+                            <a href="https://www.canva.com/en_in/visual-suite/">Visual Suite</a>
+                            <a href="https://www.canva.com/ai-assistant/">Canva AI</a>
+                            <a href="https://www.canva.com/en_in/business/features/brand/">Brand Management</a>
+                            <a href="https://www.canva.com/features/">Product Features</a>
+                            <a href="https://www.canva.com/apps/">Apps Marketplace</a>
+                        </div>
+                    </li>
+
+                    <!-- PLANS -->
+                    <li class="dropdown">
+                        <input type="radio" name="nav-toggle" id="plans-toggle">
+                        <label for="plans-toggle">Plans</label>
+                        <div class="dropdown-menu">
+                            <a href="https://www.canva.com/en_in/pricing/">Compare pricing</a>
+                            <a href="https://www.canva.com/en_in/pro/">Pro</a>
+                            <a href="https://www.canva.com/en_in/canva-business/">Business</a>
+                            <a href="https://www.canva.com/enterprise/">Enterprise</a>
+                            <a href="https://www.canva.com/en_in/canva-for-nonprofits/">Nonprofits</a>
+                            <a href="https://www.canva.com/en_in/education/">Education</a>
+                            <a href="https://www.canva.com/en_in/for-campus/">Higher education</a>
+                        </div>
+                    </li>
+
+                    <!-- BUSINESS -->
+                    <li class="dropdown">
+                        <input type="radio" name="nav-toggle" id="business-toggle">
+                        <label for="business-toggle">Business</label>
+                        <div class="dropdown-menu">
+                            <a href="https://www.canva.com/en_in/solutions/">Canva for business</a>
+                            <a href="https://www.canva.com/enterprise/">Plan and services</a>
+                            <a href="https://www.canva.com/en_in/solutions/marketing/">Use cases</a>
+                            <a href="https://www.canva.com/en_in/solutions/">Solutions</a>
+                            <a href="https://www.canva.com/en_in/business/features/team-templates/">Features</a>
+                            <a href="https://www.canva.com/marketing-ai-report/">Resources</a>
+                            <a href="https://www.canva.com/business/case-studies/">Case studies</a>
+                            <a href="https://www.canva.com/contact-sales/">Contact Sales</a>
+                        </div>
+                    </li>
+
+                    <!-- EDUCATION -->
+                    <li class="dropdown">
+                        <input type="radio" name="nav-toggle" id="education-toggle">
+                        <label for="education-toggle">Education</label>
+                        <div class="dropdown-menu">
+                            <a href="https://www.canva.com/en_in/education/">Canva for Education</a>
+                            <a href="https://www.canva.com/en_in/education/teachers/">K-12 education</a>
+                            <a href="https://www.canva.com/en_in/for-campus/">Higher education</a>
+                            <a href="https://www.canva.com/en_in/education/students/">Students</a>
+                            <a href="https://www.canva.com/en_in/pricing/#education/">Education plans</a>
+                            <a href="https://www.canva.com/education/case-studies/">Case studies</a>
+                            <a href="https://www.canva.com/en_in/newsroom/news/?category=education">Education newsroom</a>
+                        </div>
+                    </li>
+
+                    <!-- HELP -->
+                    <li class="dropdown">
+                        <input type="radio" name="nav-toggle" id="help-toggle">
+                        <label for="help-toggle">Help</label>
+                        <div class="dropdown-menu">
+                            <a href="https://www.canva.com/help/">Help Center</a>
+                            <a href="https://www.canva.com/en/design-school/">Design school</a>
+                            <a href="https://www.canva.com/en_in/work-kits/home/">Work kits</a>
+                        </div>
+                    </li>
+
+                </ul>
+            </nav>
+
+            <!-- LOGIN BUTTONS -->
+            <div class="auth">
+                <a href="https://www.canva.com/en_in/signup/" class="btn-secondary">Sign up</a>
+                <a href="https://www.canva.com/en_in/signup/" class="btn-primary">Log in</a>
+            </div>
         </div>
-    </nav>
+    </header>
+
+
+
+    <!-- ========================= HERO SECTION ========================= -->
+    <section class="hero">
+        <div class="hero-left">
+            <h1>Where heart meets art</h1>
+            <p>Canva makes it easy to create and share beautiful designs with anyone.</p>
+            <a href="https://www.canva.com/en_in/signup/">Sign up and start designing</a>
+        </div>
+
+        <div class="hero-right">
+            <video
+                class="hero-video"
+                src="images/canva_jadu_dadu_hin_16_9.mp4"
+                controls
+                playsinline
+                preload="metadata"
+                poster="images/Screenshot 2025-12-13 233852.png">
+            </video>
+        </div>
+    </section>
+
+
+
+    <!-- ========================= EXPLORE SECTION ========================= -->
+    <section class="explore">
+        <h2>Explore Canva's Templates and AI Tools</h2>
+
+        <div class="category-bar">
+            <button class="active">Try it now</button>
+            <button>AI</button>
+            <button>Presentation</button>
+            <button>Social Media</button>
+            <button>Print</button>
+            <button>Video</button>
+            <button>Education</button>
+        </div>
+
+        <div class="explore-grid">
+
+            <div class="explore-card pink">
+                <h3>Watch your words turn into production-quality visuals with AI</h3>
+                <button class="btn-white">Generate media</button>
+            </div>
+
+            <div class="explore-card yellow">
+                <h3>Bye-bye background, in a single click</h3>
+                <button class="btn-white">Remove background</button>
+            </div>
+
+        </div>
+    </section>
+
+
+
+    <!-- ========================= FOOTER ========================= -->
+    <footer class="footer">
+        <div class="footer-separator">
+            <p id="text">Unlock premium templates, more powerful design tools & AI features with a Canva plan. <a href="https://www.canva.com/en_in/education/">Educational institutions</a> and <a href="https://www.canva.com/en_in/canva-for-nonprofits/">non-profits</a> can use Canva's</p>
+            <p id="text">premium features for free.</p>
+            <br>
+            <a href="https://www.canva.com/en_in/pricing/" id="plan"><i class="fa-solid fa-web-awesome"></i> See plans and pricing</a>
+        </div>
+        <br><br><br><br><br>
+        <div class="footer-container">
+
+            <!-- Logo -->
+            <img src="https://static.canva.com/web/images/8439b51bb7a19f6e65ce1064bc37c197.svg" class="logo">
+
+            <!-- Footer Columns -->
+            <div class="footer-columns">
+
+                <div id="download">
+                    <p>Download Canva for free</p>
+                    <a href="https://www.canva.com/en_in/download/windows/">Windows</a>
+                    <a href="https://www.canva.com/en_in/download/mac/">Mac</a>
+                </div>
+
+                <div>
+                    <p>Product</p>
+                    <a href="https://www.canva.com/en_in/visual-suite/">Visual Suite</a>
+                    <a href="https://www.canva.com/en_in/magic/">Magic Studio</a>
+                    <a href="https://www.canva.com/en_in/business/features/brand/">Brand Management</a>
+                    <a href="https://www.canva.com/design-trends/">Design Trends</a>
+                </div>
+
+                <div>
+                    <p>About</p>
+                    <a href="https://www.canva.com/about/">About Canva</a>
+                    <a href="https://www.canva.com/en_in/newsroom/news/">Newsroom</a>
+                    <a href="https://www.canva.com/events/">Events</a>
+                    <a href="https://www.canva.com/en_in/step-two/">Social Impact</a>
+                </div>
+
+                <div>
+                    <p>Community</p>
+                    <a href="https://www.canva.com/en_in/creators/">Creators</a>
+                    <a href="https://www.canva.com/partners/content/">Partners</a>
+                    <a href="https://www.canva.com/help/canva-affiliate-marketing-program/">Affiliates</a>
+                    <a href="https://www.canva.com/canva-represents/">Canva Represents Fund</a>
+                </div>
+
+                <div>
+                    <p>Support</p>
+                    <a href="https://www.canva.com/en_in/help/">Help Center</a>
+                    <a href="https://www.canva.com/en_in/security/">Security</a>
+                    <a href="https://www.canva.com/en_in/sitemap/">Sitemap</a>
+                </div>
+
+            </div>
+
+            <!-- Bottom Footer -->
+            <div class="footer-bottom">
+                <span class="social-links">
+                    <a href="#"><i class="fa-solid fa-globe"></i>English(India)</a>
+                    <a href="https://www.linkedin.com/company/canva"><i class="fa-brands fa-linkedin"></i></a>
+                    <a href="https://www.instagram.com/canvaindia/"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="https://www.facebook.com/CanvaIndia/"><i class="fa-brands fa-facebook"></i></a>
+                    <a href="https://au.pinterest.com/canva/"><i class="fa-brands fa-pinterest"></i></a>
+                    <a href="https://x.com/canva"><i class="fa-brands fa-x-twitter"></i></a>
+                    <a href="https://www.youtube.com/@canvaindia"><i class="fa-brands fa-youtube"></i></a>
+                </span>
+                <span class="terms">
+                    <a href="https://www.canva.com/en_in/policies/privacy-policy/">Privacy</a> <a href="https://www.canva.com/en_in/policies/terms-of-use/">Terms</a> <p>© 2025 Canva Clone | Educational Use Only</p>
+                </span>
+            </div>
+
+        </div>
+    </footer>
+
 </body>
 </html>
