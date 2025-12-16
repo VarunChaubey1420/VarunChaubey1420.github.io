@@ -34,6 +34,26 @@ body {
     z-index: 20;
 }
 
+/* Hamburger (hidden on desktop) */
+.menu-toggle {
+    display: none;
+}
+
+.hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+}
+
+.hamburger span {
+    width: 22px;
+    height: 2px;
+    background: #1d1d1d;
+    border-radius: 2px;
+}
+
+
 .logo {
     height: 42px;
 }
@@ -230,7 +250,7 @@ body {
     font-weight: 500;
 }
 
-.category-bar .active {
+.category-bar button:hover{
     background: #3e5fff;
     color: #fff;
 }
@@ -290,7 +310,9 @@ body {
 #text a {
     color: #7300ff;
 }
-
+#plan1 {
+    text-align: center;
+}
 #plan{
     margin-bottom: 6px;
     color: #000000;
@@ -299,7 +321,6 @@ body {
     padding: 5px 10px;
     border: 1px solid #cbcbcb;
     text-decoration: none;
-    margin-left:472px;
 }
 
 #plan:hover {
@@ -311,14 +332,18 @@ body {
 .footer-container img {
     height: 40px;
     margin-bottom: 20px;
+    display: block;
+    justify-self: start;
+    margin-left: 0;
 }
 
 .footer-columns {
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* Desktop */
     gap: 60px;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
+    align-items: start;
 }
+
 
 .footer-columns div p {
     font-size: 17px;
@@ -341,6 +366,12 @@ body {
     background: rgb(240, 240, 240);
     border-radius: 5px;
     padding: 5px 10px;
+}
+
+#download {
+    grid-column: 1 / -1;   /* spans full row */
+    justify-self: start;
+    text-align: left;
 }
 
 #download p {
@@ -422,13 +453,135 @@ body {
     .hero {
         flex-direction: column;
         text-align: center;
+        gap: 30px;             
+        padding-bottom: 40px;
     }
 
-    .hero-left, .hero-right {
+    .hero-left {
         width: 100%;
+        z-index: 2;
+    }
+
+    .hero-right {
+        width: 100%;
+        margin-top: 10px;       
+    }
+
+    .hero-video {
+        max-width: 100%;
     }
 
     .hero-left h1 {
         font-size: 40px;
+    }
+    /* Show hamburger */
+    .hamburger {
+        display: flex;
+    }
+
+/* Mobile Nav */
+    nav {
+        position: absolute;
+        top: 70px;
+        left: 0;
+        width: 100%;
+        background: white;
+    }
+
+    .nav-links {
+        flex-direction: row;
+        padding: 15px;
+        gap: 15px;
+    }
+
+/* Show menu on click */
+    .menu-toggle:checked ~ nav .nav-links {
+        display: flex;
+    }
+
+    .footer-columns {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 40px;
+    }
+
+    #download {
+        grid-column: 1 / -1; /* still full width */
+        justify-self: start;
+        text-align: left;
+    }
+}
+
+@media (max-width: 768px) {
+
+     .hero-left a {
+        display: inline-block;
+        margin-top: 10px;
+    }
+    /* Category bar scroll */
+    .category-bar {
+        max-width: 100%;
+        overflow-x: auto;
+        overflow-y: hidden;
+        white-space: nowrap;
+        padding: 10px 12px;
+        margin: 20px auto;
+        box-sizing: border-box;
+    }
+
+    .category-bar::-webkit-scrollbar {
+        display: none; /* optional: hides scrollbar */
+    }
+
+    .category-bar button {
+        flex: 0 0 auto;
+    }
+
+    /* Cards stack nicely */
+    .explore-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .explore-card {
+        height: auto;
+        min-height: 200px;
+    }
+
+    #plan1 {
+    text-align: center;
+    }
+
+    .footer-columns {
+        flex-direction: column;
+        gap: 25px;
+        align-items: center;
+        text-align: center;
+    }
+
+    .footer-columns div {
+        width: 100%;
+    }
+
+    .footer-bottom {
+        flex-direction: column;
+        gap: 15px;
+        align-items: center;
+        text-align: center;
+    }
+
+    .social-links,
+    .terms {
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .footer-columns {
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+
+    #download {
+        grid-column: 1 / -1; /* still full width */
+        justify-self: start;
+        text-align: left;
     }
 }

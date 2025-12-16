@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Canva – Visual Suite for Everyone</title>
+    <title>Canva - Visual Suite for Everyone</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -19,13 +19,21 @@
             <img src="https://static.canva.com/web/images/8439b51bb7a19f6e65ce1064bc37c197.svg" class="logo">
 
             <!-- NAVIGATION -->
+            <!-- Hamburger Toggle (Mobile) -->
+            <input type="checkbox" id="menu-toggle" class="menu-toggle">
+            <label for="menu-toggle" class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </label>
+
             <nav>
                 <ul class="nav-links">
 
                     <!-- DESIGN -->
                     <li class="dropdown">
-                        <input type="radio" name="nav-toggle" id="design-toggle">
-                        <label for="design-toggle">Design</label>
+                        <input type="checkbox" name="nav-toggle" id="design-toggle">
+                        <label for="menu-toggle">Design</label>
                         <div class="dropdown-menu">
                             <a href="https://www.canva.com/docs/">Digital design</a>
                             <a href="https://www.canva.com/print/">Print design</a>
@@ -145,7 +153,7 @@
         <h2>Explore Canva's Templates and AI Tools</h2>
 
         <div class="category-bar">
-            <button class="active">Try it now</button>
+            <button>Try it now</button>
             <button>AI</button>
             <button>Presentation</button>
             <button>Social Media</button>
@@ -177,7 +185,7 @@
             <p id="text">Unlock premium templates, more powerful design tools & AI features with a Canva plan. <a href="https://www.canva.com/en_in/education/">Educational institutions</a> and <a href="https://www.canva.com/en_in/canva-for-nonprofits/">non-profits</a> can use Canva's</p>
             <p id="text">premium features for free.</p>
             <br>
-            <a href="https://www.canva.com/en_in/pricing/" id="plan"><i class="fa-solid fa-web-awesome"></i> See plans and pricing</a>
+            <div id="plan1"><a href="https://www.canva.com/en_in/pricing/" id="plan"><i class="fa-solid fa-web-awesome"></i> See plans and pricing</a><div
         </div>
         <br><br><br><br><br>
         <div class="footer-container">
