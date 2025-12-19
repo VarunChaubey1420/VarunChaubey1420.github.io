@@ -153,6 +153,10 @@ body {
     background: #6b2ac0;
 }
 
+.btn-secondary:hover {
+    background: rgb(240, 240, 240);
+}
+
 /* ----------------------------------------------------------
    HERO SECTION
 ---------------------------------------------------------- */
@@ -436,6 +440,73 @@ body {
     cursor: pointer;
 }
 
+/* Templates Section */
+.templates-section {
+    padding: 100px 0;
+    background: #ffffff;
+}
+
+/* Header */
+.templates-header {
+    text-align: center;
+    max-width: 900px;
+    margin: 0 auto 60px;
+    padding: 0 20px;
+}
+
+.templates-header h1 {
+    font-size: 48px;
+    margin-bottom: 16px;
+}
+
+.templates-header p {
+    font-size: 18px;
+    color: #555;
+}
+
+/* Grid */
+.templates-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Cards */
+.template-card {
+    background: #f5f5f5;
+    border-radius: 14px;
+    overflow: hidden;
+    cursor: pointer;
+
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.template-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* Hover effect */
+.template-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.12);
+}
+
+/* CTA */
+.templates-cta {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    margin-top: 60px;
+}
+
+
 /* ----------------------------------------------------------
    FOOTER
 ---------------------------------------------------------- */
@@ -704,10 +775,11 @@ body {
         overflow-x: auto;
         overflow-y: hidden;
         white-space: nowrap;
-        padding: 10px 16px;
+        padding: 10px 0px;
         margin: 20px 0;         
         box-sizing: border-box;
         scroll-snap-type: x mandatory;
+        justify-content: start;
     }
 
     .category-bar::-webkit-scrollbar {
@@ -820,5 +892,32 @@ body {
     }
     .btn-secondary{
         display: none;
+    }
+}
+
+@media (max-width: 1200px) {
+    .templates-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+@media (max-width: 800px) {
+    .templates-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .templates-header h1 {
+        font-size: 38px;
+    }
+}
+
+@media (max-width: 480px) {
+    .templates-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .templates-cta {
+        flex-direction: column;
+        align-items: center;
     }
 }
