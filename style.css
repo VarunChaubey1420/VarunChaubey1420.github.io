@@ -258,8 +258,14 @@ body {
 /* Explore grid */
 .explore-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    grid-template-columns: repeat(3, 1fr);
     gap: 25px;
+}
+
+.explore-grid .explore-card:nth-child(1),
+.explore-grid .explore-card:nth-child(4),
+.explore-grid .explore-card:nth-child(5){
+    grid-column: span 2;
 }
 
 /* Explore Cards */
@@ -271,15 +277,32 @@ body {
     flex-direction: column;
     justify-content: space-between;
     color: #fff;
+    min-height: 400px;
+}
+
+.red{
+    background: rgb(255, 94, 120);
 }
 
 .pink {
-    background: #ff7086;
+    background: #fe82dd;
 }
 
 .yellow {
     background: #fde280;
     color: #333 !important;
+}
+
+.blue {
+    background: #3e5fff;
+}
+
+.cyan{
+    background: rgb(0, 192, 192);
+}
+
+.orange{
+    background: rgb(255, 145, 0);
 }
 
 .btn-white {
@@ -489,9 +512,22 @@ body {
     }
 
     .nav-links {
-        flex-direction: row;
+        flex-direction: column;
         padding: 15px;
         gap: 15px;
+    }
+
+    .dropdown-menu {
+        position: absolute;
+        top: 10px;
+        left: 0;
+        width: 200px;
+        background: #fff;
+        border-radius: 14px;
+        padding: 15px 10px;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.12);
+        display: none;
+        margin-left: 100px;
     }
 
 /* Show menu on click */
@@ -519,31 +555,42 @@ body {
     }
     /* Category bar scroll */
     .category-bar {
+        display: flex;
+        gap: 12px;
         max-width: 100%;
         overflow-x: auto;
         overflow-y: hidden;
         white-space: nowrap;
-        padding: 10px 12px;
-        margin: 20px auto;
+        padding: 10px 16px;
+        margin: 20px 0;         
         box-sizing: border-box;
+        scroll-snap-type: x mandatory;
     }
 
     .category-bar::-webkit-scrollbar {
-        display: none; /* optional: hides scrollbar */
+        display: none;
     }
 
     .category-bar button {
         flex: 0 0 auto;
+        scroll-snap-align: start;
     }
 
     /* Cards stack nicely */
     .explore-grid {
-        grid-template-columns: 1fr;
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 25px;
+}
+
+    .explore-grid .explore-card:nth-child(1),
+    .explore-grid .explore-card:nth-child(4),
+    .explore-grid .explore-card:nth-child(5){
+        grid-column: span 1;
     }
 
     .explore-card {
-        height: auto;
-        min-height: 200px;
+        min-height: 280px;
     }
 
     #plan1 {
@@ -583,5 +630,8 @@ body {
         grid-column: 1 / -1; /* still full width */
         justify-self: start;
         text-align: left;
+    }
+    .btn-secondary{
+        display: none;
     }
 }
