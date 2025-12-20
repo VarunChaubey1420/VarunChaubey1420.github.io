@@ -1,124 +1,77 @@
 # Canva Homepage Clone (HTML + CSS)
 
-This project is a front-end clone of the **Canva homepage**, created as a final web development project using **only HTML and CSS**.  
-The goal of this project was to replicate the visual layout and user interface of Canva while keeping the implementation simple, clean, and suitable for a student-level submission.
+This project is a **responsive front-end clone of the Canva homepage**, created using **only HTML and CSS** as part of a college web development assignment.
 
-> ⚠️ This project is for **educational purposes only**.  
-> All brand names, logos, and media belong to their respective owners.
-
----
-
-## 🚀 Features
-
-- Full-page **blue to white gradient background**
-- Sticky navigation bar with **click-to-open dropdown menus**
-- **Pure CSS dropdowns** (no JavaScript used)
-- Hero section with **video instead of image**
-- Custom **Play / Pause button** on video (no timeline bar)
-- Explore section with category tabs and feature cards
-- Clean and simplified **multi-column footer**
-- Fully responsive layout (desktop + mobile)
-- No JavaScript, no framework, no WebKit hacks
+The goal of this project was not to build a functional replica, but to **visually and structurally replicate Canva’s UI layout**, focusing on:
+- Layout systems
+- Responsive design
+- Modern UI patterns
 
 ---
 
-## 🛠️ Technologies Used
+## 🔧 Tech Stack
 
-- **HTML5**
-- **CSS3**
-  - Flexbox
-  - Grid
-  - Gradients
-  - Pseudo-elements
-  - Checkbox & radio button hacks
+- HTML5
+- CSS3 (Flexbox & Grid)
+- Google Fonts (Poppins)
+- Font Awesome Icons
 
----
-
-## 🎬 Custom Video Controls (Important)
-
-Native HTML video controls cannot be partially customized (for example, removing only the time bar).  
-To achieve a Canva-like experience:
-
-- Native controls were **disabled**
-- A **custom play/pause button** was built using:
-  - `<input type="checkbox">`
-  - `<label>` overlay
-  - CSS pseudo-elements
-
-This allows:
-- Play / Pause functionality
-- No timeline bar
-- No JavaScript
-- Clean, professional UI
+> ❌ No JavaScript  
+> ❌ No frameworks (Bootstrap, Tailwind, etc.)
 
 ---
 
-## 📂 Project Structure
-canva-clone/
-│
-├── index.html
-├── style.css
-├── README.md
-└── images/
-    ├── canva_jadu_dadu_hin_16_9.mp4
-    └── video-poster.png
+## ✨ Key Features
+
+- Fully responsive navigation bar with hamburger menu
+- Hero section with embedded video
+- Explore section with:
+  - Category bar
+  - Horizontal scroll cards
+  - Screenshot-based cards (cropped responsively)
+- AI Image Generator section
+- Business Features section with:
+  - Horizontally scrollable cards (desktop & mobile)
+  - Images anchored at the bottom of cards
+- Templates gallery with hover effects
+- Responsive footer layout
+- Clean typography and spacing inspired by Canva
 
 ---
 
-## 📌 Key UI Components
+## 📱 Responsive Design
 
-### Navigation Bar
-- Logo
-- Six main menu items
-- Click-based dropdown panels
-- Only one dropdown opens at a time (radio-button logic)
+The website adapts seamlessly across:
+- Desktop
+- Laptop
+- Tablet
+- Mobile devices
 
-### Hero Section
-- Text content on the left
-- Video preview on the right
-- Custom circular play/pause button overlay
-
-### Explore Section
-- Rounded category selector bar
-- AI feature cards with gradients
-
-### Footer
-- Simplified multi-column layout
-- Social links
-- Language indicator
-- Privacy and Terms
+Modern UI techniques used:
+- CSS Grid for layouts
+- Flexbox for alignment
+- `object-fit: cover` for responsive image cropping
+- Scroll snapping for horizontal sections
 
 ---
 
-## 📱 Responsiveness
+## ⚠️ Disclaimer
 
-- Desktop-first design
-- Navigation simplified on smaller screens
-- Flexible layout using percentage widths and media queries
+This project is created **strictly for educational purposes**.
 
----
-
-## 🧠 Learning Outcomes
-
-Through this project, I learned:
-
-- How to structure large webpages using semantic HTML
-- Advanced CSS layout techniques
-- Building interactive UI components **without JavaScript**
-- Handling real-world design limitations
-- Writing clean, maintainable front-end code
-
----
-
-## 📄 Disclaimer
-
-This project is a **UI clone** created strictly for learning and academic purposes.  
-It does not represent the actual Canva website and is not intended for commercial use.
+- Canva is a registered trademark of Canva Pty Ltd.
+- All logos, names, and branding belong to their respective owners.
+- This project is **not affiliated with or endorsed by Canva**.
 
 ---
 
 ## 👨‍💻 Author
 
-**Varun**  
-Final Web Development Project  
-HTML + CSS
+**Varun Chaubey**  
+College Web Development Project  
+2025
+
+---
+
+⭐ If you’re reviewing this project:  
+It demonstrates strong fundamentals of **HTML structure, CSS layout systems, and responsive design principles**.
