@@ -267,6 +267,7 @@ body {
     min-height: 400px;
     position: relative;
     overflow: hidden;
+    gap: 15px;
 }
 
 .explore-card img {
@@ -423,11 +424,6 @@ body {
 
 .business-card:nth-child(even) {
     background: #dff7ef;
-}
-
-.business-card:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 18px 40px rgba(0, 0, 0, 0.12);
 }
 
 .card-content h3 {
