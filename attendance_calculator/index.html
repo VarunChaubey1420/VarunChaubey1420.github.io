@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>OP Attendance Tracker</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+    <h1>🚀 OP Attendance Tracker</h1>
+
+    <!-- Initial -->
+    <div class="card">
+        <h2>Set Initial</h2>
+        <input type="number" id="totalLectures" placeholder="Total lectures">
+        <input type="number" id="attendedLectures" placeholder="Attended">
+        <button onclick="setInitial()">Set</button>
+    </div>
+
+    <!-- Daily -->
+    <div class="card">
+        <h2>Daily Update</h2>
+        <input type="number" id="todayLectures" placeholder="Lectures today">
+        <input type="number" id="todayAttended" placeholder="Attended today">
+        <button onclick="updateAttendance()">Update</button>
+    </div>
+
+    <!-- Result -->
+    <div class="card">
+        <h2>Stats</h2>
+        <p>Total: <span id="total">0</span></p>
+        <p>Attended: <span id="attended">0</span></p>
+        <p>Attendance: <span id="percentage">0%</span></p>
+
+        <div class="progress-bar">
+            <div id="progress"></div>
+        </div>
+
+        <p id="status"></p>
+        <p id="bunk"></p>
+    </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
