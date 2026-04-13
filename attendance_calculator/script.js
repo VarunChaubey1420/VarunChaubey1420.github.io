@@ -1,29 +1,40 @@
 let total = 0;
 let attended = 0;
 
-// Load from localStorage
+// 🔄 Load from localStorage on start
 window.onload = function () {
     let data = JSON.parse(localStorage.getItem("attendance"));
 
     if (data) {
-        total = data.total;
-        attended = data.attended;
-        updateDisplay();
+        total = data.total || 0;
+        attended = data.attended || 0;
     }
+
+    updateDisplay();
 };
 
+// 💾 Save data
 function saveData() {
-    localStorage.setItem("attendance", JSON.stringify({ total, attended }));
+    localStorage.setItem("attendance", JSON.stringify({
+        total: total,
+        attended: attended
+    }));
 }
 
-function setInitial() {
-    total = parseInt(document.getElementById("totalLectures").value) || 0;
-    attended = parseInt(document.getElementById("attendedLectures").value) || 0;
+// 🔔 Toast notification
+function showToast(message) {
+    const toast = document.getElementById("toast");
+    toast.innerText = message;
+    toast.classList.add("show");
 
-    saveData();
-    updateDisplay();
+    setTimeout(() => {
+        toast.classList.remove("show");
+    }, 2000);
 }
 
+
+
+// ➕ Daily update
 function updateAttendance() {
     let todayTotal = parseInt(document.getElementById("todayLectures").value) || 0;
     let todayAttended = parseInt(document.getElementById("todayAttended").value) || 0;
@@ -33,8 +44,14 @@ function updateAttendance() {
 
     saveData();
     updateDisplay();
+    showToast("Updated successfully ✅");
+
+    // 🧹 Clear inputs after update
+    document.getElementById("todayLectures").value = "";
+    document.getElementById("todayAttended").value = "";
 }
 
+// 🧠 Update UI
 function updateDisplay() {
     document.getElementById("total").innerText = total;
     document.getElementById("attended").innerText = attended;
@@ -42,10 +59,10 @@ function updateDisplay() {
     let percentage = total === 0 ? 0 : ((attended / total) * 100).toFixed(2);
     document.getElementById("percentage").innerText = percentage + "%";
 
-    // Progress bar
+    // 📊 Progress bar
     document.getElementById("progress").style.width = percentage + "%";
 
-    // Status
+    // 🎯 Status
     let status = document.getElementById("status");
     if (percentage >= 75) {
         status.innerText = "✅ Safe zone (Above 75%)";
@@ -55,7 +72,7 @@ function updateDisplay() {
         status.style.color = "orange";
     }
 
-    // Bunk calculator
+    // 😎 Bunk calculator
     let bunk = document.getElementById("bunk");
 
     let maxBunk = Math.floor(attended / 0.75 - total);
@@ -67,3 +84,24 @@ function updateDisplay() {
         bunk.innerText = `📚 Attend next ${need} classes to reach 75%`;
     }
 }
+
+// 🧹 Reset everything
+function resetData() {
+    if (confirm("Are you sure you want to reset?")) {
+        localStorage.removeItem("attendance");
+        total = 0;
+        attended = 0;
+
+        updateDisplay();
+        showToast("Data reset 🧹");
+    }
+}
+
+// 🔀 Switch screens (app UI)
+function showScreen(screenId) {
+    document.querySelectorAll(".screen").forEach(screen => {
+        screen.classList.remove("active");
+    });
+
+    document.getElementById(screenId).classList.add("active");
+}   

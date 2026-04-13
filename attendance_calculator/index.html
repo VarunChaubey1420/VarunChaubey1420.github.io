@@ -2,46 +2,53 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>OP Attendance Tracker</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Attendance App</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<div class="container">
-    <h1>🚀 OP Attendance Tracker</h1>
+<div class="app">
 
-    <!-- Initial -->
-    <div class="card">
-        <h2>Set Initial</h2>
-        <input type="number" id="totalLectures" placeholder="Total lectures">
-        <input type="number" id="attendedLectures" placeholder="Attended">
-        <button onclick="setInitial()">Set</button>
+    <!-- Screens -->
+    <div id="home" class="screen active">
+        <h2>📊 Dashboard</h2>
+
+        <div class="card">
+            <p>Total: <span id="total">0</span></p>
+            <p>Attended: <span id="attended">0</span></p>
+            <p>Attendance: <span id="percentage">0%</span></p>
+
+            <div class="progress-bar">
+                <div id="progress"></div>
+            </div>
+
+            <p id="status"></p>
+            <p id="bunk"></p><br>
+
+            <button onclick="resetData()">Reset</button>
+        </div>
     </div>
 
-    <!-- Daily -->
-    <div class="card">
-        <h2>Daily Update</h2>
-        <input type="number" id="todayLectures" placeholder="Lectures today">
-        <input type="number" id="todayAttended" placeholder="Attended today">
-        <button onclick="updateAttendance()">Update</button>
-    </div>
+    <div id="update" class="screen">
+        <h2>➕ Update</h2>
 
-    <!-- Result -->
-    <div class="card">
-        <h2>Stats</h2>
-        <p>Total: <span id="total">0</span></p>
-        <p>Attended: <span id="attended">0</span></p>
-        <p>Attendance: <span id="percentage">0%</span></p>
-
-        <div class="progress-bar">
-            <div id="progress"></div>
+        <div class="card">
+            <input type="number" id="todayLectures" placeholder="Lectures today">
+            <input type="number" id="todayAttended" placeholder="Attended today">
+            <button onclick="updateAttendance()">Update</button>
         </div>
 
-        <p id="status"></p>
-        <p id="bunk"></p>
     </div>
-</div>
 
+    <!-- Bottom Nav -->
+    <div class="nav">
+        <button onclick="showScreen('home')">🏠</button>
+        <button onclick="showScreen('update')">➕</button>
+    </div>
+
+</div>
+<div id="toast">Done ✅</div>
 <script src="script.js"></script>
 </body>
 </html>

@@ -6,90 +6,147 @@
 
 body {
     font-family: 'Poppins', sans-serif;
-    background: linear-gradient(135deg, #0f172a, #020617);
-    color: #e2e8f0;
+    background: #020617;
+    color: white;
 
     display: flex;
     justify-content: center;
-    align-items: flex-start;   /* 👈 top align instead of center */
-    
-    min-height: 100vh;         /* 👈 allow scrolling */
-    padding: 20px 10px;        /* 👈 breathing space */
 }
 
-/* Container */
-.container {
+/* App container */
+.app {
     width: 100%;
-    max-width: 380px;          /* 👈 prevents overflow */
+    max-width: 420px;
+    min-height: 100vh;
+    padding: 15px;
+    padding-bottom: 70px;
+
+    background: #020617;
 }
 
-/* Title */
-h1 {
-    text-align: center;
-    margin-bottom: 20px;
-    font-weight: 600;
+/* 🖥️ DESKTOP MODE */
+@media (min-width: 768px) {
+    body {
+        align-items: center;
+        min-height: 100vh;
+        background: linear-gradient(135deg, #020617, #0f172a);
+    }
+
+    .app {
+        min-height: auto;
+        height: 90vh;
+        border-radius: 20px;
+        box-shadow: 0 20px 60px rgba(0,0,0,0.6);
+        border: 1px solid rgba(255,255,255,0.08);
+        overflow: hidden;
+    }
+}
+
+/* Screens */
+.screen {
+    display: none;
+}
+
+.screen.active {
+    display: block;
+}
+
+/* Headings */
+h2 {
+    margin-bottom: 15px;
 }
 
 /* Card */
 .card {
-    background: rgba(255, 255, 255, 0.05);
-    backdrop-filter: blur(15px);
-    border: 1px solid rgba(255,255,255,0.08);
-    padding: 18px;
-    margin-bottom: 15px;
-    border-radius: 16px;
-    box-shadow: 0 8px 25px rgba(0,0,0,0.4);
+    background: rgba(255,255,255,0.05);
+    padding: 15px;
+    border-radius: 14px;
+    margin-bottom: 12px;
 }
 
 /* Inputs */
 input {
     width: 100%;
-    padding: 10px;
-    margin: 10px 0;
+    padding: 12px;
+    margin: 8px 0;
     border-radius: 8px;
     border: none;
-    outline: none;
     background: rgba(255,255,255,0.08);
-    color: #fff;
+    color: white;
 }
 
 /* Button */
 button {
     width: 100%;
-    padding: 10px;
+    padding: 12px;
+    border-radius: 10px;
     border: none;
-    border-radius: 8px;
     background: linear-gradient(135deg, #38bdf8, #6366f1);
     color: white;
     font-weight: 600;
-    cursor: pointer;
 }
 
 /* Progress */
 .progress-bar {
     width: 100%;
     height: 10px;
-    background: rgba(255,255,255,0.08);
+    background: rgba(255,255,255,0.1);
     border-radius: 10px;
-    margin: 12px 0;
-    overflow: hidden;
+    margin: 10px 0;
 }
 
 #progress {
     height: 100%;
     width: 0%;
-    background: linear-gradient(90deg, #22c55e, #4ade80);
+    background: #22c55e;
     border-radius: 10px;
-    transition: 0.4s;
 }
 
-/* Text */
-#status {
-    margin-top: 8px;
+/* Bottom Nav */
+.nav {
+    position: fixed;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+
+    width: 100%;
+    max-width: 420px;
+
+    display: flex;
+    justify-content: space-around;
+
+    background: #020617;
+    padding: 10px 0;
+    border-top: 1px solid rgba(255,255,255,0.1);
+}
+/* Toast */
+#toast {
+    position: fixed;
+    bottom: 80px;
+    left: 50%;
+    transform: translateX(-50%);
+
+    background: #22c55e;
+    color: white;
+    padding: 10px 16px;
+    border-radius: 8px;
+
+    opacity: 0;
+    transition: 0.3s;
 }
 
-#bunk {
-    font-size: 14px;
-    margin-top: 6px;
-    color: #cbd5f5;
+#toast.show {
+    opacity: 1;
+}
+/* 🖥️ Desktop nav fix */
+@media (min-width: 768px) {
+    .nav {
+        position: absolute;
+        bottom: 0;
+    }
+}
+
+.nav button {
+    background: none;
+    font-size: 20px;
 }
