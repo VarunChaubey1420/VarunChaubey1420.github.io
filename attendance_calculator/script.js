@@ -105,16 +105,3 @@ function showScreen(screenId) {
 
     document.getElementById(screenId).classList.add("active");
 }
-
-if ("serviceWorker" in navigator) {
-    navigator.serviceWorker.register("service-worker.js")
-        .then(() => console.log("Service Worker Registered"));
-}
-let deferredPrompt;
-
-window.addEventListener("beforeinstallprompt", (e) => {
-    e.preventDefault();
-    deferredPrompt = e;
-
-    console.log("Install available");
-});
