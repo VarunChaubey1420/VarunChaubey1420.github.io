@@ -372,5 +372,12 @@ button:hover {
     .weather-grid {
         grid-template-columns: 1fr;
     }
-
+    #city{
+        width:85%;
+    }
+}
+#history {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
 }
