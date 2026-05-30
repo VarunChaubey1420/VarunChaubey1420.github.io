@@ -373,7 +373,10 @@ button:hover {
         grid-template-columns: 1fr;
     }
     #city{
-        width:85%;
+        width:87%;
+    }
+    #search{
+        width:100%
     }
 }
 #history {
