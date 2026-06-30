@@ -1,0 +1,12 @@
+:root {
+  --bg: #09090B;
+  --surface: #111827;
+  --primary: #2563EB;
+  --primary-hover: #3B82F6;
+  --text: #FFFFFF;
+  --text-secondary: #94A3B8;
+  --border: rgba(255,255,255,.08);
+  --max-width: 1200px;
+  --radius: 18px;
+  --transition: .3s ease;
+}
