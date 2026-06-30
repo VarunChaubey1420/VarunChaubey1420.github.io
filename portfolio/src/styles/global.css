@@ -13,7 +13,17 @@ html {
 }
 
 body {
-  background: var(--bg);
+  background:
+
+  radial-gradient(circle at top left,
+  rgba(37,99,235,.12),
+  transparent 35%),
+
+  radial-gradient(circle at bottom right,
+  rgba(59,130,246,.08),
+  transparent 30%),
+
+  var(--bg);
   color: var(--text);
   font-family: "Inter", sans-serif;
   overflow-x: hidden;

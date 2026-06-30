@@ -1,0 +1,169 @@
+.hero{
+
+    min-height:100vh;
+
+    display:flex;
+
+    align-items:center;
+
+    padding-top:120px;
+
+}
+
+.hero-container{
+
+    width:100%;
+
+    max-width:1200px;
+
+    margin:auto;
+
+    padding:0 40px;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+}
+
+.hero-left{
+
+    max-width:650px;
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:28px;
+
+}
+
+.hero-status{
+
+    color:#22c55e;
+
+    font-weight:600;
+
+}
+
+.hero h1{
+
+    font-size:clamp(4rem,8vw,7rem);
+
+    line-height:1;
+
+}
+
+.hero-description{
+
+    color:var(--text-secondary);
+
+    font-size:1.2rem;
+
+    max-width:500px;
+
+    line-height:1.7;
+
+}
+
+.hero-buttons{
+
+    display:flex;
+
+    gap:20px;
+
+}
+
+.hero-buttons button{
+
+    padding:16px 32px;
+
+    border-radius:14px;
+
+    background:var(--primary);
+
+    color:white;
+
+    font-weight:600;
+
+    transition:.3s;
+
+}
+
+.hero-buttons button:hover{
+
+    transform:translateY(-3px);
+
+    background:var(--primary-hover);
+
+}
+
+.hero-right{
+
+    width:420px;
+
+    height:420px;
+
+    border-radius:32px;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    background:rgba(255,255,255,.03);
+
+    backdrop-filter:blur(15px);
+
+    border:1px solid rgba(255,255,255,.08);
+
+    box-shadow:0 0 60px rgba(37,99,235,.12);
+
+}
+
+.hero-logo{
+
+    width:320px;
+
+    user-select:none;
+
+    transition:.4s ease;
+
+}
+
+.hero-logo:hover{
+
+    transform:scale(1.05);
+
+}
+
+.hero-status{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:12px;
+
+    color:var(--text-secondary);
+
+    font-weight:500;
+
+}
+
+.status-dot{
+
+    width:10px;
+
+    height:10px;
+
+    border-radius:50%;
+
+    background:#22c55e;
+
+    box-shadow:0 0 15px #22c55e;
+
+}
