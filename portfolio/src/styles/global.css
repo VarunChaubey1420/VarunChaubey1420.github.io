@@ -1,5 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Sora:wght@400;500;600;700;800&display=swap');
-
+@import "./utilities.css";
 @import "./variables.css";
 
 * {
@@ -56,4 +56,13 @@ img {
 
 ul {
   list-style: none;
+}
+
+::selection{
+    background:var(--primary);
+    color:white;
+}
+
+section{
+    padding:120px 0;
 }

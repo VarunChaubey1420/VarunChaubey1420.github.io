@@ -1,7 +1,6 @@
 function Journey() {
   return (
     <section id="journey">
-
     </section>
   );
 }
